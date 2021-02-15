@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vanilla Javascript Tab Click Information</title>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <div class="iconImg active" data-id="content1">
+                <img src="image/google.svg">
+            </div>
+            <div class="iconImg" data-id="content2">
+                <img src="image/telegram.svg">
+            </div>
+            <div class="iconImg" data-id="content3">
+                <img src="image/youtube.svg">
+            </div>
+            <div class="iconImg" data-id="content4">
+                <img src="image/twitter.svg">
+            </div>
+        </div>
+        <div class="content">
+            <div class="contentText active" id="content1">
+                <div>
+                    <div class="text">
+                        <h2>Google</h2>
+                        <p>
+                            Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. It is considered one of the Big Five technology companies in the U.S. information technology industry, alongside Amazon, Facebook, Apple, and Microsoft.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+            <div class="contentText" id="content2">
+                <div>
+                    <div class="text">
+                        <h2>Telegram</h2>
+                        <p>
+                            Telegram is a freeware, cross-platform, cloud-based instant messaging (IM) software and application service. The service also provides end-to-end encrypted video calling,[15] VoIP, file sharing and several other features. It was initially launched for iOS on 14 August 2013 and Android in October 2013. The application servers of Telegram are distributed worldwide to decrease data load, while the operational center is currently based in Dubai. Various Telegram client apps are available for desktop and mobile platforms including official apps for Android, iOS, Windows, macOS and Linux, as well as for the now-discontinued Windows Phone.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+            <div class="contentText" id="content3">
+                <div>
+                    <div class="text">
+                        <h2>Youtube</h2>
+                        <p>
+                            YouTube is an American online video-sharing platform headquartered in San Bruno, California. The service, created in February 2005 by three former PayPal employees—Chad Hurley, Steve Chen, and Jawed Karim—was bought by Google in November 2006 for US$1.65 billion and now operates as one of the company's subsidiaries. YouTube is the second most-visited website after Google Search, according to Alexa Internet rankings.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+            <div class="contentText" id="content4">
+                <div>
+                    <div class="text">
+                        <h2>Twitter</h2>
+                        <p>
+                            Twitter is an American microblogging and social networking service on which users post and interact with messages known as "tweets". Registered users can post, like and retweet tweets, but unregistered users can only read them. Users access Twitter through its website interface or its mobile-device application software ("app"), though the service could also be accessed via SMS before April 2020.[13] Twitter, Inc. is based in San Francisco, California, and has more than 25 offices around the world.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var iconImg = document.querySelectorAll('.iconImg');
+        var contentText = document.querySelectorAll('.contentText');
+
+        for (var i=0; i<iconImg.length; i++){
+            iconImg[i].addEventListener('mouseover', function(){
+                for (var i=0; i<contentText.length; i++){
+                    contentText[i].className='contentText';
+                }
+                document.getElementById(this.dataset.id).className = 'contentText active';
+
+                for (var i=0; i<iconImg.length; i++){
+                    iconImg[i].className='iconImg';
+                }
+                this.className='iconImg active'
+            })
+        }
+    </script>
+</body>
+</html>
